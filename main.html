@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiEi</title>
+    <style>
+        .top{
+            margin: -0.35% 0 0 -0.5%;
+            width: 100.4%;
+            height: 50px;
+            background-color: #3d3d3d;
+            padding: 5px;
+        }
+        #logo{
+            font-size: 45px;
+            float: left;
+            align-items: center;
+            width: 20%;
+            margin-left: 5px;
+            color: #ffe1e1;
+        }
+        #profile{
+            font-size: 30px;
+            float: right;
+            padding: 5px 10px 5px 10px;
+            margin: 3px 10px 0 15px;
+            background-color: #d10606;
+            cursor: pointer;
+        }
+        #profile:hover{
+            background-color: #006eff;
+        }
+        #sell{
+            font-size: 30px;
+            float: right;
+            padding: 5px 10px 5px 10px;
+            margin-top: 3px;
+            background-color: #006eff;
+            cursor: pointer;
+       }
+       #sell:hover{
+           background-color: #d10606;
+       }
+       
+
+       .item{
+            margin: 0 0 0 -0.5%;
+            width: 95.9%;
+            height: 710px;
+            padding: 40px;
+       }
+       .item_img{
+            align-items: center;
+            margin-top: 75px;
+            width: 65%;
+            height: auto;
+            background-size: contain;
+            float: left;
+       }
+       .item_options{
+            width: 30%; 
+            float: right;
+            font-size: 40px;
+            margin-top: 75px;
+            text-align: center;
+       }
+       .options_name{
+            font-size: 60px;
+            margin-bottom: 10%;
+       }
+       .options_prise{
+           font-size: 30px;
+            margin-top: 23%;
+            color: #df0000;
+            text-align: center;
+       }
+       .first{
+            margin-right: 10px;
+       }
+       td{
+            padding: 8px;
+            font-size: 25px;
+            text-align: left;
+       }
+       .options_next{
+            font-size: 20px;
+            padding: 5px;
+            margin-top: 6%;
+       }
+       .options_next:hover{
+            background-color: white;
+            color: black;
+            cursor: pointer;
+       }
+       .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            margin: 350px 0 0 -600px;
+            width: 10px;
+            padding: 2px;
+            color: rgb(255, 0, 0);
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            z-index: 3;
+        }
+        .next {
+            margin: 350px 0 0 -20px;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgb(104, 104, 104);
+        }
+        
+        #scroll-to-top {
+			display: none;
+			position: fixed;
+			margin: 0 20px 20px 0;
+			z-index: 100;
+			font-size: 18px;
+			border: 0;
+			outline: 0;
+			background-color: #2196F3;
+			color: white;
+			cursor: pointer;
+			padding: 15px;
+			border-radius: 10px;
+		}
+		#scroll-to-top.show {
+			display: block;
+		}
+    </style>
+</head>
+<body style="font-family:Fira Code,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace">
+    <div class="top">
+        <div id="logo">DiEi</div>
+        <div id="profile">Войти</div>
+        <div id="sell">Подать объявление</div>
+    </div>
+
+    <div class="item" style="background-color: black; color: white;">
+        <aside class="item_img">
+            <img src="assets/images/image1_0.jpg" id="img1" style="background-size: cover; width: 100%; height: 100%;"/>
+            <a class="prev" onclick="image1(1)">&#10094;</a>
+            <a class="next" onclick="image1(-1)">&#10095;</a>
+        </aside>
+        <aside class="item_options">
+            <aside class="options_name">Lamborghini Revuelto</aside>
+            <aside class="options_inf">
+                <table>
+                    <tr>
+                        <td class="first">Мощьность</td><td>1015CV</td>
+                    </tr>
+                    <tr>
+                        <td class="first">Максимальная скорость</td><td>>350 км/ч</td>
+                    </tr>
+                    <tr>
+                        <td class="first">От 0 до 100 км/ч</td><td>2,5с</td>
+                    </tr>
+                </table>
+            </aside>
+            <aside class="options_prise">prise:  $507 000</aside>
+            <a class="options_next">Подробнее</a>
+        </aside>
+    </div>
+    <div class="item" style="background-color: white; color: black">
+        <aside class="item_img">
+            <img src="assets/images/image2_0.jpg" id="img2" style="background-size: cover; width: 100%; height: 100%;"/>
+            <a class="prev" onclick="image2(1)">&#10094;</a>
+            <a class="next" onclick="image2(-1)">&#10095;</a>
+        </aside>
+        <aside class="item_options">
+            <aside class="options_name">Вилла в Дубае, ОАЭ</aside>
+            <aside class="options_inf">
+                <table>
+                    <tr>
+                        <td class="first">Площадь дома</td><td>963.5 м2</td>
+                    </tr>
+                    <tr>
+                        <td class="first">Количество спален</td><td>5</td>
+                    </tr>
+                    <tr>
+                        <td class="first">Адрес</td><td>ОАЭ, Дубай, Dubai Hills Estate</td>
+                    </tr>
+                </table>
+            </aside>
+            <aside class="options_prise">prise:  $6 744 500</aside>
+            <a class="options_next">Подробнее</a>
+        </aside>
+    </div>
+    <div class="item" style="background-color: black; color:white">
+        <aside class="item_img">
+            <img src="assets/images/image3_0.jpg" id="img3" style="background-size: cover; width: 100%; height: 100%;"/>
+            <a class="prev" onclick="image3(1)">&#10094;</a>
+            <a class="next" onclick="image3(-1)">&#10095;</a>
+        </aside>
+        <aside class="item_options">
+            <aside class="options_name">Широкие пижамные брюки с принтом Nautical</aside></aside>
+            <aside class="options_inf">
+                <table>
+                    <tr>
+                        <td class="first">Осноной материал</td><td>100% хлопок</td>
+                    </tr>
+                    <tr>
+                        <td class="first">Цвет</td><td>Голубой</td>
+                    </tr>
+                    <tr>
+                        <td class="first">Изготовлено</td><td>В Италий</td>
+                    </tr>
+                </table>
+            </aside>
+            <aside class="options_prise">prise:  $1910</aside>
+            <a class="options_next">Подробнее</a>
+        </aside>
+    </div>
+    <button id="scroll-to-top" title="Наверх страницы">Наверх</button>
+</body>
+<script>
+    window.onscroll = function() {scrollFunction()};
+
+	function scrollFunction() {
+		if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		    document.getElementById("scroll-to-top").classList.add("show");
+		} else {
+			document.getElementById("scroll-to-top").classList.remove("show");
+			}
+		}
+		document.getElementById("scroll-to-top").addEventListener("click", function() { 
+		        window.scrollTo({
+				top: 0,
+				behavior: "smooth"
+		});
+	});
+	
+    var v = [];
+    var n = 0;
+    for(var i=0 ; i<3 ; i++){
+        v[i] = 0;
+    }
+    function image1(num){
+        n = 0;
+        if(v[n] + num > 4){
+            v[n] = 0;
+        }
+        else if(v[n] + num == -1){
+            v[n] = 4;
+        }
+        else{ v[n] += num}
+        var photo1 = document.getElementById("img1");
+        photo1.src = "assets/images/image" + (n + 1) + "_"  + v[n] + ".jpg";
+        console.log(v[n]);
+    }
+    function image2(num){
+        n = 1;
+        if(v[n] + num > 6){
+            v[n] = 0;
+        }
+        else if(v[n] + num == -1){
+            v[n] = 6;
+        }
+        else{ v[n] += num}
+        var photo1 = document.getElementById("img2");
+        photo1.src = "assets/images/image" + (n + 1) + "_"  + v[n] + ".jpg";
+        console.log(v[n]);
+    }
+    function image3(num){
+        n = 2;
+        if(v[n] + num > 4){
+            v[n] = 0;
+        }
+        else if(v[n] + num == -1){
+            v[n] = 4;
+        }
+        else{ v[n] += num}
+        var photo1 = document.getElementById("img3");
+        photo1.src = "assets/images/image" + (n + 1) + "_" + v[n] + ".jpg";
+        console.log(v[n]);
+    }
+</script>
+</html>
